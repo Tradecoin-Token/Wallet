@@ -246,9 +246,9 @@
     <span id="version" class="centerIt">
                 <span>Address:</span>
                 <span id="wavesAccountAddress" class="clipSpan" tooltipster tooltip-theme="tooltipster-theme3" title="Copy the address to clipboard." ngclipboard data-clipboard-text="{{::menu.address}}" ngclipboard-success="clipboardOk()">{{::menu.address}}</span>
-                <span id="wavesAccountAddressQr" ng-click="menu.showAddressQr()">your address (QR)</span>
+                <span id="wavesAccountAddressQr" ng-click="menu.showAddressQr()"><b>your address (QR Code)</b></span>
                 <span class="divider-2"></span>
-                <span class="inlineParagraph">Block:</span> <span id="blockheight">{{menu.blockHeight}}</span>
+                <span class="inlineParagraph"><font color='white'><b>BLOCK:</font></span> <span id="blockheight"><font color='white'>{{menu.blockHeight}}</font></b></span>
             </span>
 
     <div class="noDisp">
