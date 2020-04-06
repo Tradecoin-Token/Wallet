@@ -419,21 +419,21 @@
           <div class="noDisp" ng-controller="walletSendController as send">
             <div id="wB-butSend-WAV" waves-dialog ok-button-caption="SUBMIT" cancel-button-visible="false" on-dialog-ok="send.submitTransfer(send.form)">
               <form id="send-waves-form" name="send.form" class="paymentForm" novalidate ng-validate="send.validationOptions">
-                <h2 class="sectionHeader">SEND PAYMENT: {{send.currency}}</h2>
-                <table>
+                <h2 class="sectionHeader"><b><font color='red'>SEND PAYMENT:</font><font color='green'> {{send.currency}}</font></b></h2>
+                <table bgcolor='#e0e0d1'> <!--color grey-->
                   <div class="balanceAmt">
                     <div ng-if="!send.feeAndTransferAssetsAreTheSame"><p>Asset balance: </p><span class="balancewaves">{{send.assetBalance | moneyLong:true}}</span><br/></div>
                     <p>Waves balance: </p><span class="balancewaves">{{send.feeAssetBalance | moneyLong:true}}</span>
                   </div>
                   <thead>
                   <tr>
-                    <th>DESCRIPTION</th>
-                    <th>INPUT</th>
+                    <th bgcolor='0000ff'>DESCRIPTION</th>
+                    <th bgcolor='0000ff'>INPUT</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
-                    <td>Recipient's Address</td>
+                    <td><b>Recipient's Address</b></td>
                     <td>
                       <div class="form-field">
                         <input class="wInput form-control" name="sendRecipient" type="text" placeholder="Recipient" ng-model="send.recipient" />
@@ -441,7 +441,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Amount</td>
+                    <td><b>Amount</b></td>
                     <td>
                       <div class="form-field">
                         <input class="wInput form-control" name="sendAmount" type="text" placeholder="Amount" ng-model="send.amount" decimal-input-restrictor />
@@ -449,7 +449,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Attachment</td>
+                    <td><b>Attachment</b></td>
                     <td>
                       <div class="form-field">
                         <textarea rows="2" class="wInput form-control" name="sendAttachment" ng-model="send.attachment"></textarea>
@@ -457,7 +457,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>Fee</td>
+                    <td><b>Fee</b></td>
                     <td>
                       <md-autocomplete md-input-name="sendFee" md-selected-item="send.autocomplete.selectedFee" md-search-text="send.autocomplete.searchText"
                                        md-items="item in send.autocomplete.querySearch(send.autocomplete.searchText)"
@@ -1234,7 +1234,7 @@
         <div id="mBB-community" class="mBB-content" ng-switch-when="community" ng-controller="communityController as community">
           <!-- Temporary -->
           <p>DISCLAIMER: The Community tab will temporarily hold block information for testing purposes. After alpha phase this data  will be relocated inside the Preferences - Advanced area.</p>
-          <h2 class="sectionHeader">LATEST BLOCKS INFORMATION</h2>
+          <h2 class="sectionHeader"><b>LATEST BLOCKS INFORMATION</b></h2>
           <p class="centerIt">
           <div id="latestBlocks" class="wavesTable wScroll" >
             <table>
