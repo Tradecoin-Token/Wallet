@@ -42,8 +42,8 @@
 <div id="lockscreen" class="userBG" ng-controller="accountsController as accounts" ng-switch-when="accounts-screen" ng-cloak>
   <div class="banner">
     <div class="banner-content">
-      <img src="img/warning_icon.svg"/> We are Trying our Best to improve our Code. Kindly Don't Forget to Save or Notedown your secret phrase (SEED).
-      Hold some Tradecoin from this wallet or official Waves site <a href="https://waves.exchange/dex?assetId1=WAVES&assetId2=EekwfLSAkbREneBHrXdZSRAEPvmijq71Nf2GDNqBStz4" target="_blank">waves.exchange</a>
+      <img src="img/warning_icon.svg"/><b>We are Trying our Best to improve our Code. Kindly Don't Forget to Save or Notedown your secret phrase (SEED).
+      Hold some Tradecoin from this wallet or official Waves site <a href="https://waves.exchange/dex?assetId1=WAVES&assetId2=EekwfLSAkbREneBHrXdZSRAEPvmijq71Nf2GDNqBStz4" target="_blank">Waves.Exchange</a><br><font color ="white">Lease Your Waves at our mining node <a href="https://wavesexplorer.com/address/3PJgDho14MN1ueX7D1kp2XJ3McggppfdQeT" target="_blank">3PJgDho14MN1ueX7D1kp2XJ3McggppfdQeT</font></a> to earn staking rewards in BTC.</b>	 
     </div>
   </div>
   <table id="lockscreenTable">
@@ -73,18 +73,18 @@
               </button>
             </p>
 
-            <button id="import_account" class="wButton fade" tooltipster tooltip-theme="tooltipster-theme1" title="Click here to import an existing account." ng-click="list.importAccount()">IMPORT ACCOUNT</button>
+            <button id="import_account" style='background-color:blue;color:white;border-radius: 4px;' class="wButton fade" tooltipster tooltip-theme="tooltipster-theme1" title="Click here to import an existing account." ng-click="list.importAccount()" ><b>IMPORT ACCOUNT</b></button>
             <span class="divider-1"></span>
-            <button id="create_account" class="wButton fade" tooltipster tooltip-theme="tooltipster-theme1" title="Click here to create a brand new account." ng-click="list.createAccount()">NEW ACCOUNT</button>
+            <button id="create_account" style='background-color:#00ff00;color:white;border-radius: 4px;' class="wButton fade" tooltipster tooltip-theme="tooltipster-theme1" title="Click here to create a brand new account." ng-click="list.createAccount()"><b>NEW ACCOUNT</b></button>
             <br/>
 
             <!-- Remove Account popup -->
             <div id="account-remove-popup" waves-dialog on-dialog-ok="list.removeAccount()" is-error="true" ok-button-caption="REMOVE">
-              <h2 class="sectionHeader">REMOVE ACCOUNT - NOTICE</h2>
+              <h2 class="sectionHeader"><b><font color='red'>REMOVE ACCOUNT - NOTICE</b></font></h2>
               <p class="dialog-text">This feature completely removes the account from this device.</p>
               <p class="dialog-text">The account will not be eliminated or destroyed, but instead will not be shown anymore in the Accounts List at the client startup.</p>
-              <p class="dialog-text">You can always re-generate your account on this device again using the Import Account feature and entering the SEED when prompted.</p>
-              <p class="dialog-text">Click on the REMOVE button to proceed with the account removal, or CANCEL to return to the previous screen.</p>
+              <p class="dialog-text"><b><font color='red'>You can always re-generate your account on this device again using the Import Account feature and entering the SEED when prompted.</p></b></font>
+              <p class="dialog-text">Click on the <b>REMOVE</b> button to proceed with the account removal, or <b>CANCEL</b> to return to the previous screen.</p>
             </div>
           </div>
 
@@ -92,10 +92,10 @@
           <div id="create-seed" ng-controller="accountSeedController as vm" ng-show="accounts.mode === 'create-seed'">
             <form id="account-seed-form" name="accountSeedForm" ng-submit="vm.checkSeedAndRegister(accountSeedForm)" novalidate ng-validate="vm.validationOptions">
 
-              <button id="generateRandomSeed" class="wButton fade" ng-click="vm.generateSeed()" type="button">GENERATE NEW SEED</button>
+              <button id="generateRandomSeed" style='background-color:#0000ff;color:white;border-radius: 4px;' class="wButton fade" ng-click="vm.generateSeed()" type="button"><b>CLICK HERE TO GENERATE NEW SEED</b></button>
               <br/><br/>
               <div class="form-field">
-                <label for="walletSeed">WALLET SEED</label>
+                <label for="walletSeed"><b>WALLET SEED</b></label>
                 <br/>
                 <textarea id="walletSeed" rows="4" name="walletSeed" class="wInput" focus-me="accounts.mode === 'create-seed'" ng-model="vm.seed" ng-change="vm.refreshAddress()" ng-model-options="{ debounce: 750 }" ng-trim="false"></textarea>
                 <span class="clipSpan" tooltipster tooltip-theme="tooltipster-theme1" title="Copy the seed to the clipboard." data-clipboard-target="#walletSeed" data-clipboard-message-success="Wallet seed has been successfully copied to clipboard" ></span>
@@ -109,9 +109,9 @@
                   <span>{{vm.displayAddress}}</span>
                 </div>
               </div>
-              <button class="wButton fade" type="submit">REGISTER ACCOUNT</button>
+              <button class="wButton fade" style='background-color:yellow;color:black;border-radius: 4px;' type="submit"><b>REGISTER ACCOUNT</b></button>
               <span class="divider-2"></span>
-              <button class="wButton fade" type="reset" ng-click="vm.back()">BACK</button>
+              <button class="wButton fade" style='background-color:#0099ff;color:black;border-radius: 4px;' type="reset" ng-click="vm.back()"><b>BACK</b></button>
 
               <div id="seed-whitespace-popup" waves-dialog on-dialog-ok="vm.registerAccount()" closeable="false" ok-button-caption="PROCEED">
                 <h2 class="sectionHeader">SEED NOTICE</h2>
@@ -240,7 +240,7 @@
   <header class="fFade noSelect" ng-controller="mainMenuController as menu">
     <img id="topLogoH" src="img/topleftlogo_hor.svg" width="200" height="100" alt="Waves platform logo horizontal" />
     <div id="logoNversion2">
-      <img src="img/topleftlogo.svg" />
+      <img src="img/topleftlogo.jpg" />
       <p ng-class='{testnet: isTestnet()}'>{{::home.title}} <span class="wlcversion">{{::home.version}}</span></p>
     </div>
     <span id="version" class="centerIt">
